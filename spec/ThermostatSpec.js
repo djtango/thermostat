@@ -50,6 +50,24 @@ describe ('Thermostat',function(){
     expect(thermostat.getCurrentTemperature()).toEqual(20);
   });
 
+  it ('consider low usage when temp is below 18',function(){
+    for (var i=0; i<9; i++){
+      thermostat.down();
+    }
+    expect(thermostat.tempUsage()).toEqual("low usage");
+  });
+
+  it ('is consider medium usage when temperature is between 18-25',function(){
+    expect(thermostat.tempUsage()).toEqual('medium usage');
+  });
+
+  it ('is consider high usage when is more than 25',function(){
+    thermostat.powerSaving(false);
+    for ( var i=0; i<6; i++){
+      thermostat.up();
+    }
+    expect(thermostat.tempUsage()).toEqual('high usage');
+  });
 
 
 });
