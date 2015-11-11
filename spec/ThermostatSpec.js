@@ -40,7 +40,15 @@ describe ('Thermostat',function(){
       thermostat.up();
     }
     expect(thermostat.getCurrentTemperature()).toEqual(32);
-});
+  });
+
+  it('sets the temperature to 20 if click reset button',function(){
+    for (var i=0; i<3; i++) {
+      thermostat.down();
+    }
+    thermostat.resetTemperature();
+    expect(thermostat.getCurrentTemperature()).toEqual(20);
+  });
 
 
 
