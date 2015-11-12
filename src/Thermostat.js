@@ -2,11 +2,11 @@ function Thermostat (){
   this.DEFAULT_TEMP = 20;
   this.temperature = this.DEFAULT_TEMP;
   this.minimumTemp = 10;
-  this.maximumTemp = 25;
   this.MEDIUM_ENERGY_LOW = 18;
   this.MEDIUM_ENERGY_HIGH = 25;
   this.MAX_TEMPERATURE = 32;
   this.powerSavingMode = true;
+  this.maximumTemp = this.MEDIUM_ENERGY_HIGH;
 }
 
 Thermostat.prototype.getCurrentTemperature = function() {
