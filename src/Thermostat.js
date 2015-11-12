@@ -66,6 +66,6 @@ Thermostat.prototype.tempUsage = function() {
 
 
 Thermostat.prototype.powerSavingSwitch = function(){
-  this.powerSavingMode = !this.powerSavingMode
-  this.powerSaving()
-}
+  this.powerSavingMode = !this.powerSavingMode;
+  this.powerSaving();
+};

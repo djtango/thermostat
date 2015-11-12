@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Thermostat</title>
+</head>
+
+<body style="text-align: center">
+  <link rel="stylesheet" href="style.css">
+  <script src="src/Thermostat.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+  <h1 id="temperature">Temperature: </h1>
+  <div id='button'>
+    <button id="plus_button" type="button">Temperature up</button>
+    <button id="minus_button" type="button">Temperature down</button>
+  </div>
+  <br>
+  <br>
+  <form id="powerSavingOn">
+    <input type="radio" name="Power Saving"> Power Saving on
+    <br>
+    <br>
+    <input type="radio" name="Power Saving"> Power Saving off
+    <br>
+  </form>
+  <br>
+  <button id="resetButton" type="button">Reset Button</button>
+  <div class="container">
+    <div class="progressbar"></div>
+  </div>
+</body>
+<script>
+  $(document).ready(function() {
+    $("#minus_button").click(function() {
+      $(this).effect("pulsate", {
+        times: 1
+      }, 2000);
+    });
+    $("#plus_button").click(function() {
+      $(this).effect("pulsate", {
+        times: 1
+      }, 2000);
+    });
+
+    function setProgress(progress) {
+      var progressBarWidth = progress * $(".container").width() / 100;
+      $(".progressbar").width(progressBarWidth).html(progress + "% ");
+    }
+  })
+</script>
+
+</html>
