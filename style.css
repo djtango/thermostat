@@ -1,3 +1,7 @@
+#all {
+
+}
+
 #minus_button {
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
@@ -6,14 +10,17 @@
   background-image: -o-linear-gradient(top, #3498db, #2980b9);
   background-image: linear-gradient(to bottom, #3498db, #2980b9);
   -webkit-border-radius: 47;
-  -moz-border-radius: 47;
-  border-radius: 47px;
+  -webkit-box-sizing: border-box;
+  /*-moz-border-radius: 47;*/
+  border-top-left-radius: 47px;
+  border-top-right-radius: 0px;
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 0px 10px 0px;
   border: solid #1f628d 3px;
   text-decoration: none;
+  width: 160px;
 }
 
 #minus_button:hover {
@@ -34,14 +41,17 @@
   background-image: -o-linear-gradient(top, #d92955, #d92955);
   background-image: linear-gradient(to bottom, #d92955, #d92955);
   -webkit-border-radius: 47;
-  -moz-border-radius: 47;
-  border-radius: 47px;
+  -webkit-box-sizing: border-box;
+  /*-moz-border-radius: 47;*/
+  border-top-right-radius: 47px;
+  border-top-left-radius: 0px;
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 0px 10px 0px;
   border: solid #8c1f1f 3px;
   text-decoration: none;
+  width: 160px;
 }
 
 #plus_button:hover {
@@ -55,7 +65,26 @@
 }
 
 #resetButton {
+  background: #9CA89B;
+  background-image: -webkit-linear-gradient(top, #088A08, #088A08);
+  background-image: -moz-linear-gradient(top, #088A08, #088A08);
+  background-image: -ms-linear-gradient(top, #088A08, #088A08);
+  background-image: -o-linear-gradient(top, #088A08, #088A08);
+  background-image: linear-gradient(to bottom, #F1F1F1, #F1F1F1);
+  -webkit-border-radius: 47;
+  -webkit-box-sizing: border-box;
+  -moz-border-radius: 47;
+  border-radius: 47px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  font-family: Arial;
+  color: #5A5A5A;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #5A5A5A 3px;
+  text-decoration: none;
   margin-bottom: 50px;
+  width: 320px;
 }
 
 .container{
@@ -64,7 +93,7 @@
     border-radius: 5px;
     overflow: hidden;
     display:inline-block;
-    margin:0px 10px 5px 5px;
+    margin:0px 0px 0px 0px;
     vertical-align:top;
 }
 
@@ -75,6 +104,7 @@
     width: 20px;
     background-color: #0ba1b5;
     border-radius: 3px;
+    -webkit-box-sizing: border-box;
 
     transition: width 2s ease;
     -webkit-transition: width 2s ease;
@@ -84,7 +114,9 @@
 }
 
 .PSMswitch {
-    position: relative; width: 90px;
+  float: left;
+    position: fixed;
+    width: 90px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
 .PSMswitch-checkbox {
