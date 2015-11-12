@@ -18,13 +18,13 @@
   </div>
   <br>
   <br>
-  <form id="powerSavingOn">
-    <input type="radio" name="Power Saving"> Power Saving on
-    <br>
-    <br>
-    <input type="radio" name="Power Saving"> Power Saving off
-    <br>
-  </form>
+  <div class="PSMswitch">
+    <input type="checkbox" name="PSMswitch" class="PSMswitch-checkbox" id="myPSMswitch" checked>
+    <label class="PSMswitch-label" for="myPSMswitch">
+        <span class="PSMswitch-inner"></span>
+        <span class="PSMswitch-switch"></span>
+    </label>
+  </div>
   <br>
   <button id="resetButton" type="button">Reset Button</button>
   <div class="container">
@@ -32,21 +32,42 @@
   </div>
 </body>
 <script>
+  var thermostat = new Thermostat()
   $(document).ready(function() {
+
+    $("#temperature").text('Temperature: ' + thermostat.temperature)
+    setProgress(thermostat.temperature/32)
+
     $("#minus_button").click(function() {
+      thermostat.down()
+      $("#temperature").text('Temperature: ' + thermostat.temperature)
+      setProgress(thermostat.temperature/32)
       $(this).effect("pulsate", {
-        times: 1
-      }, 2000);
-    });
-    $("#plus_button").click(function() {
-      $(this).effect("pulsate", {
-        times: 1
-      }, 2000);
+        times: 0
+      }, 50);
     });
 
+    $("#plus_button").click(function() {
+      thermostat.up()
+      $("#temperature").text('Temperature: ' + thermostat.temperature)
+      setProgress(thermostat.temperature/32)
+      $(this).effect("pulsate", {
+        times: 0
+      }, 50);
+    });
+
+    $("#resetButton").click(function(){
+      thermostat.resetTemperature();
+    })
+    $("#myPSMswitch").change(function(){
+      thermostat.powerSavingSwitch();
+      $('#temperature').text('Temperature: ' + thermostat.temperature)
+      setProgress(thermostat.temperature/32)
+    })
+
     function setProgress(progress) {
-      var progressBarWidth = progress * $(".container").width() / 100;
-      $(".progressbar").width(progressBarWidth).html(progress + "% ");
+      var progressBarWidth = progress * $(".container").width();
+      $(".progressbar").width(progressBarWidth);
     }
   })
 </script>

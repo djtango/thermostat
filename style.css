@@ -83,6 +83,62 @@
     -ms-transition: width 0s ease;
 }
 
+.PSMswitch {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.PSMswitch-checkbox {
+    display: none;
+}
+.PSMswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.PSMswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.PSMswitch-inner:before, .PSMswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.PSMswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #60D143; color: #FFFFFF;
+}
+.PSMswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.PSMswitch-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+.PSMswitch-checkbox:checked + .PSMswitch-label .PSMswitch-inner {
+    margin-left: 0;
+}
+.PSMswitch-checkbox:checked + .PSMswitch-label .PSMswitch-switch {
+    right: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
 @keyframes bganim {
     from {background-position:0px;} to { background-position:40px;}
 }
