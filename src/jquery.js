@@ -1,11 +1,11 @@
-  var thermostat = new Thermostat()
+  var thermostat = new Thermostat();
   $(document).ready(function() {
 
     updateTemp();
 
 
     $("#minus_button").click(function() {
-      thermostat.down()
+      thermostat.down();
       updateTemp();
       $(this).effect("pulsate", {
         times: 0
@@ -13,7 +13,7 @@
     });
 
     $("#plus_button").click(function() {
-      thermostat.up()
+      thermostat.up();
       updateTemp();
       $(this).effect("pulsate", {
         times: 0
@@ -29,28 +29,29 @@
       updateTemp();
     });
 
-    $("#submit_location").click(function(event) {
+    $("#location_input").keypress(function(event) {
+      if (event.which ==13){
       var location = $("#location_input").val();
       getWeather(location);
-      event.preventDefault();
+      event.preventDefault();}
     });
 
     function setProgress(progress) {
       var progressBarWidth = progress * $(".container").width();
       $(".progressbar").width(progressBarWidth);
       $("#Ttext").html(thermostat.temperature + '\xB0' + 'C');
-    };
+    }
 
     function updateTemp() {
-      $('#temperature').text('Temperature: ' + thermostat.temperature)
-      setProgress(thermostat.temperature / 32)
-    };
+      $('#temperature').text('Temperature: ' + thermostat.temperature);
+      setProgress(thermostat.temperature / 32);
+    }
 
     var getWeather = function(location) {
       var url = "http://api.openweathermap.org/data/2.5/weather";
-      var location = 'q=' + location;
+      var _location = 'q=' + location;
       var id = 'appid=5b0530235264ae9772c53b8a59018b69';
-      var data = location + "&" + id;
+      var data = _location + "&" + id;
       $.getJSON(url, data, unPackWeather);
     };
 
@@ -61,9 +62,9 @@
 
     var KtoC = function(tempK) {
       return Math.round(tempK - 273.15);
-    }
+    };
 
-    getWeather($("#location_input").val())
+    getWeather($("#location_input").val());
 
 
-  })
+  });

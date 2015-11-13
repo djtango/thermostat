@@ -4,13 +4,14 @@
 <head>
   <meta charset="utf-8">
   <title>Thermostat</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="src/Thermostat.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 
 <body style="text-align: center">
   <div id="all">
-    <link rel="stylesheet" href="style.css">
-    <script src="src/Thermostat.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <h1>Thermostat</h1>
     <div id='button'>
       <button id="minus_button" type="button">-</button>
       <button id="plus_button" type="button">+</button>
@@ -24,18 +25,21 @@
     <button id="resetButton" type="button">Reset</button>
     <br>
   </div>
-    <div class="PSMswitch">
-      <input type="checkbox" name="PSMswitch" class="PSMswitch-checkbox" id="myPSMswitch" checked>
-      <label class="PSMswitch-label" for="myPSMswitch">
-        <span class="PSMswitch-inner"></span>
-        <span class="PSMswitch-switch"></span>
-      </label>
+    <div>
+      <h2>Power Saving Switch</h2>
+      <div class="PSMswitch">
+        <input type="checkbox" name="PSMswitch" class="PSMswitch-checkbox" id="myPSMswitch" checked>
+        <label class="PSMswitch-label" for="myPSMswitch">
+          <span class="PSMswitch-inner"></span>
+          <span class="PSMswitch-switch"></span>
+        </label>
+      </div>
     </div>
     <div class='local_weather'>
+      <h2>Local Temperature</h2>
       <h1 id='local_temperature'><span id='local_temp_value'></span>°C</h1>
       <form>
         <input type='text' id='location_input' value='London'>
-        <input type='submit' value='Submit' id='submit_location'>
       </form>
     </div>
   <script src='src/jquery.js'></script>

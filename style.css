@@ -23,6 +23,7 @@
   width: 160px;
 }
 
+
 #minus_button:hover {
   background: #3cb0fd;
   background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
@@ -165,7 +166,10 @@
   padding: 10em;
 }
 
-
+#location_input{
+    border: none;
+    outline: none;
+}
 
 
 
